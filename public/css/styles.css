@@ -1,0 +1,19 @@
+.mt-2{
+    margin-top: 5rem !important;
+}
+.form-product{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.list-group .list-group-item .title{
+  font-weight: bold;
+  font-size: 36px;
+  border-bottom: 1px solid #f3f3f3;
+
+}
+.list-group .list-group-item .description {
+    font-size: 10px;
+    margin-top: 1rem;
+}
