@@ -68,7 +68,7 @@ class EneamController extends Controller
         $product->price=$request->price;
         $product->description=$request->description;
         $product->save();
-        return redirect()->back()->with("success","le produit est modifier avec sucess");
+        return redirect()->back()->with("success","le produit est modifier avec sucess !");
     }
     public function Show(Produit $product){
         return view('showproduct',[
