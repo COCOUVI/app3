@@ -30,13 +30,6 @@
         "VIEW_COMPILED_PATH": "/tmp/views",
         "SSR_TEMP_PATH": "/tmp/ssr",
         "NODE_PATH": "node"
-    },
-    "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Forwarded-Proto", "value": "https" }
-      ]
     }
-  ]
+    
 }
