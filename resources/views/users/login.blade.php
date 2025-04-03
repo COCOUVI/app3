@@ -12,7 +12,7 @@
                 <div class="card-header">Login</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('handleLogin') }}">
+                    <form method="POST" action="https://app3-phi-ebon.vercel.app/login">
                         @csrf
                         @method('POST')
                         <div class="mb-3">

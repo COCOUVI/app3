@@ -6,7 +6,6 @@
                     <div class="card">
                         <div class="card-body">
                             <form action="{{route('handleUser')}}" method="POST" class="form-product">
-                                @method('POST')
                                 @csrf
                                 <h4>Inscription</h4>
                                 <div class="form-group ">
