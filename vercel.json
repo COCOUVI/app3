@@ -1,33 +1,13 @@
 {
     "version": 2,
     "builds": [
-        { 
-            "src": "public/**",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "api/index.php",
-            "use": {
-                "src": "vercel-php@0.6.0",
-                "config": {
-                    "includeFiles": {
-                        "public/": "public/",
-                        "bootstrap/": "bootstrap/",
-                        "app/": "app/",
-                        "resources/": "resources/"
-                    }
-                }
-            }
-        }
+        { "src": "/api/index.php", "use": "vercel-php@0.6.0" },
+        { "src": "/public/**", "use": "@vercel/static" }
     ],
     "routes": [
         {
-            "src": "/css/(.*)",
-            "dest": "/public/css/$1"
-        },
-        {
-            "src": "/js/(.*)",
-            "dest": "/public/js/$1"
+            "src": "/(css|js)/(.*)",
+            "dest": "public/$1/$2"
         },
         {
             "src": "/(.*)",
@@ -35,13 +15,20 @@
         }
     ],
     "env": {
-        "APP_KEY": "base64:Rh1ihFZg/nqxi+K7CtgxdtP8Ekg8x5SE6I5UwAalT9I=",
-        "SESSION_DRIVER": "cookie",
-        "SESSION_SECURE_COOKIE": "true",
-        "SESSION_SAME_SITE": "lax",
-        "APP_URL": "https://app3-phi-ebon.vercel.app/",
-        "SANCTUM_STATEFUL_DOMAINS": "your-domain.vercel.app",
+        "APP_NAME": "Laravel",
+        "APP_ENV": "production",
+        "APP_DEBUG": "false",
+        "VERCEL_DEMO_MODE": "true", 
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "array",
         "VIEW_COMPILED_PATH": "/tmp/views",
-        "LOG_CHANNEL": "stderr"
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "NODE_PATH": "node"
     }
 }
