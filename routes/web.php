@@ -1,4 +1,4 @@
-voci mon web.php:<?php
+<?php
 
 use App\Http\Controllers\EneamController;
 use Illuminate\Support\Facades\Route;
