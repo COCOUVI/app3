@@ -112,7 +112,7 @@ class EneamController extends Controller
             return redirect()->intended('/products');
         }
  
-        return back()->with('errors','Information de connexion non reconnus');
+        return back()->with('errors','Information de connexion non reconnus mdr');
 
 
         
