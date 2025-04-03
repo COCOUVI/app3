@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('handleLogin') }}">
                         @csrf
-                        @method('post')
+                        {{-- @method('post') --}}
                         <div class="mb-3">
                             <label for="email" class="form-label">Adresse e-mail</label>
                             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
