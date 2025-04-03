@@ -1,32 +1,35 @@
 {
     "version": 2,
     "builds": [
-      {
-        "src": "public/index.php",
-        "use": "@vercel-community/php@0.6.1"
-      },
-      {
-        "src": "public/**/*.+(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)",
-        "use": "@vercel/static"
-      }
+        { "src": "/api/index.php", "use": "vercel-php@0.6.0" },
+        { "src": "/public/**", "use": "@vercel/static" }
     ],
     "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "public/index.php"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "public/index.php"
-      }
+        {
+            "src": "/(css|js)/(.*)",
+            "dest": "public/$1/$2"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
     ],
     "env": {
-      "APP_ENV": "production",
-      "APP_DEBUG": "false",
-      "APP_URL": "https://votre-domaine.vercel.app",
-      "LOG_CHANNEL": "stderr",
-      "SESSION_DRIVER": "cookie",
-      "CACHE_DRIVER": "file",
-      "VIEW_COMPILED_PATH": "/tmp/views"
+        "APP_NAME": "Laravel",
+        "APP_ENV": "production",
+        "APP_DEBUG": "false",
+        "VERCEL_DEMO_MODE": "true",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "array",
+        "VIEW_COMPILED_PATH": "/tmp/views",
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "NODE_PATH": "node"
     }
-  }
+    
+}
