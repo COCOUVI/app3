@@ -19,10 +19,10 @@
     "env": {
       "APP_ENV": "production",
       "APP_DEBUG": "false",
-      "APP_KEY": "base64:Rh1ihFZg/nqxi+K7CtgxdtP8Ekg8x5SE6I5UwAalT9I=", // Obligatoire (php artisan key:generate)
+      "APP_KEY": "base64:Rh1ihFZg/nqxi+K7CtgxdtP8Ekg8x5SE6I5UwAalT9I=",
       "DB_CONNECTION": "mysql",
-      "DB_HOST": "f15lz.h.filess.io",              // Ex: 127.0.0.1 ou db.planetscale.com
-      "DB_PORT": "61002",                         // Port MySQL par défaut
+      "DB_HOST": "f15lz.h.filess.io",
+      "DB_PORT": "61002",
       "DB_DATABASE": "projet3_modernsold",
       "DB_USERNAME": "projet3_modernsold",
       "DB_PASSWORD": "b3b5c5562e0253cfc957b04a5e035b5ad9c54d9c",
