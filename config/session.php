@@ -155,8 +155,8 @@ return [
     | domain and all subdomains. Typically, this shouldn't be changed.
     |
     */
-    'domain' => env('SESSION_DOMAIN', '.vercel.app'),
-    'partitioned' => true,
+
+    'domain' => env('SESSION_DOMAIN'),
 
     /*
     |--------------------------------------------------------------------------
