@@ -3,7 +3,7 @@
     "builds": [
       {
         "src": "public/index.php",
-        "use": "@vercel/php@0.6.0"
+        "use": "@vercel-community/php@0.6.1"
       },
       {
         "src": "public/**/*.+(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)",
@@ -12,6 +12,10 @@
     ],
     "routes": [
       {
+        "src": "/api/(.*)",
+        "dest": "public/index.php"
+      },
+      {
         "src": "/(.*)",
         "dest": "public/index.php"
       }
@@ -19,15 +23,10 @@
     "env": {
       "APP_ENV": "production",
       "APP_DEBUG": "false",
-      "APP_KEY": "base64:Rh1ihFZg/nqxi+K7CtgxdtP8Ekg8x5SE6I5UwAalT9I=",
-      "DB_CONNECTION": "mysql",
-      "DB_HOST": "f15lz.h.filess.io",
-      "DB_PORT": "61002",
-      "DB_DATABASE": "projet3_modernsold",
-      "DB_USERNAME": "projet3_modernsold",
-      "DB_PASSWORD": "b3b5c5562e0253cfc957b04a5e035b5ad9c54d9c",
+      "APP_URL": "https://votre-domaine.vercel.app",
+      "LOG_CHANNEL": "stderr",
+      "SESSION_DRIVER": "cookie",
       "CACHE_DRIVER": "file",
-      "SESSION_DRIVER": "file",
       "VIEW_COMPILED_PATH": "/tmp/views"
     }
   }
