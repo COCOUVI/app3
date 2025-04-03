@@ -6,26 +6,14 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ChekAge
+class CheckAge
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
-    // public function handle(Request $request, Closure $next): Response
-    // {
-    //     $age = $request->input('age');
-    //     //  dd($age);
-    //     if (is_null($age)) {
-    //         // Gérer le cas où l'âge n'est pas fourni
-    //         return redirect()->route('home')->with('error', 'Âge non fourni.');
-    //     }
-
-    //     if ($age < 18) {
-    //         return redirect()->route('home')->with('error', 'Vous devez avoir 18 ans ou plus.');
-    //     }
-
-    //     return  redirect()->route('regist');
-    // }
+    public function handle(Request $request, Closure $next): Response
+    {
+        if ($request->age < 18) {
+            abort(403, 'Accès interdit aux mineurs');
+        }
+        
+        return $next($request);
+    }
 }
