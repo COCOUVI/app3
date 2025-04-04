@@ -12,9 +12,7 @@ Route::prefix('eneam')->group(function(){
     Route::get('/register',[EneamController::class,"AfficherRegister"])->name('regist');
     Route::get('/login', [EneamController::class,"AfficherLogin"]);
 });
-Route::get('/ig/{id}',function($id){
-    echo 'parametres ='.$id;
-});
+
 
 Route::middleware(['guest'])->group(function (){
     Route::get('/editp/{product}',[EneamController::class,"EditProduct"])->name('edit');
